@@ -1,0 +1,38 @@
+#include <Servo.h>
+#include <SoftwareSerial.h>
+
+
+SoftwareSerial bt(8, 7); //RX, TX
+ 
+ servo;
+
+  int data = 0;
+  int value;
+void setup() {
+  bt.begin(9600); 
+
+  //Seri iletişimi başlat
+  servo.attach(9); 
+
+  //Servo pin ayarlaması
+}
+ void loop() {
+  if (bt.available() > 0) 
+  
+  //Veri kontrolu
+  {
+    data = bt.parseInt(); 
+
+    //Veriyi data değişkenine eşitle
+    
+    if (data > 0) {
+      value = data; 
+
+      //value değişkenini data değişkenine eşitle
+    }
+    servo.write(value); 
+
+    //Servo kontrolü
+  }
+  delay(20);
+}
